@@ -11,7 +11,13 @@ namespace WebCookie
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            String[] form = Request.Form.AllKeys;
+            HttpCookie formCookie = new HttpCookie("utilisateur");
+
+            for(int i = 0; i < form.Length; i++ )
+            {
+                Response.Write(Request["txtNom"]);
+            }
         }
     }
 }
