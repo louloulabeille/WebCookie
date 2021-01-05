@@ -19,7 +19,7 @@ namespace WebCookie
             TableBrowser.Rows.Add(CookiesBrowserRow(Request.Cookies));
             TableBrowser.Rows.Add(JScriptVersionBrowserRow());
             TableBrowser.Rows.Add(ActiveXBrowserRow());
-
+            Table newtable = new Table();
             
         }
 
@@ -39,6 +39,12 @@ namespace WebCookie
                 HttpCookie util = cookie.Get("utilisateur");
                 if (util.HasKeys) //-- HasKeys indiquant si un cookie possède des sous-clés.
                 {
+                    String[] tabCookie = util.Values.AllKeys; 
+                    for ( int i = 0; i < tabCookie.Length; i++ )
+                    {
+                        Response.Write(tabCookie[i] +" : "+ util.Values.Get(tabCookie[i])+"<br/>");
+                    }
+                    
                     TextBoxNom.Text = util["txtNom"];
                     TextBoxPrenom.Text = util["txtPrenom"];
                     TextBoxConnexion.Text = util["connexion"];

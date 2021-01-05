@@ -11,17 +11,17 @@ namespace WebCookie
 {
 
 
-    public partial class index
+    public partial class index2
     {
 
         /// <summary>
-        /// Contrôle form1.
+        /// Contrôle frmCoordonnees.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm frmCoordonnees;
 
         /// <summary>
         /// Contrôle txtNom.
@@ -30,7 +30,7 @@ namespace WebCookie
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNom;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtNom;
 
         /// <summary>
         /// Contrôle txtPrenom.
@@ -39,16 +39,24 @@ namespace WebCookie
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPrenom;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtPrenom;
 
         /// <summary>
-        /// Contrôle Btn_Envoie.
+        /// Contrôle btnEnvoyer.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Btn_Envoie;
+        protected global::System.Web.UI.HtmlControls.HtmlInputButton btnEnvoyer;
 
+        /// <summary>
+        /// Contrôle affichage.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl affichage;
     }
 }

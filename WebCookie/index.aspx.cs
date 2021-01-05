@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
+using System.Web.UI.HtmlControls;
 
 namespace WebCookie
 {
@@ -11,14 +11,26 @@ namespace WebCookie
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*HttpCookie utilisateur = new HttpCookie("utilisateur");
-            utilisateur.Values["connexion"] = DateTime.Now.ToString();
-            utilisateur.Values["txtNom"] = "loulou";
-            utilisateur.Values["txtPrenom"] = "labeille";
 
-            Response.Cookies["cookie"].Value = "true";
-            Response.Cookies.Add(utilisateur);*/
+            if (IsPostBack)
+            {
+                HttpCookie util = new HttpCookie("utilisateur");
+                string[] tabForm = Request.Form.AllKeys;
 
+                util.Values["connexion"] = DateTime.Now.ToString();
+                for (int i = 0; i < tabForm.Length; i++ )
+                {
+                    util.Values[tabForm[i]] = Request.Form.Get(tabForm[i]);
+                }
+
+                /*utilisateur.Values["txtNom"] = Request.Form["txtNom"];
+                utilisateur.Values["txtPrenom"] = Request.Form["txtPrenom"];*/
+
+                Response.Cookies["cookie"].Value = "true";
+                Response.Cookies.Add(util);
+                //Response.Redirect("WebCookies.aspx"); //-- efface le formulaire
+                Server.Transfer("WebCookies.aspx",false); //-- peut rediriger mais peut garder mémoire certaines informations
+            } 
         }
     }
 }

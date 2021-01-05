@@ -8,7 +8,7 @@
     <title></title>
 </head>
 <body>
-    <form id="form1" runat="server" action="WebFormCookies.aspx" method="post" >
+    <form id="form1" runat="server" >
         <div>
             Nom : <asp:TextBox ID="txtNom" runat="server"></asp:TextBox>
             Prenom : <asp:TextBox ID="txtPrenom" runat="server"></asp:TextBox>
